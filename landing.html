@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title>Landing page</title>
-  
-<script type="text/javascript">
-    (function(p,u,s,h){
-        p._pcq=p._pcq||[];
-        p._pcq.push(['_currentTime',Date.now()]);
-        s=u.createElement('script');
-        s.type='text/javascript';
-        s.async=true;
-        s.src='https://cdn.pushcrew.com/js/cf28f18a9a82a98cc6d9345e9028010d.js';
-        h=u.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s,h);
-    })(window,document);
-  </script>
-  </head>
- <body>
-   
-    
-  <p><a class="Link" href="https://ajaybala95.github.io">Redirect</a></p>
-   
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://pushcrew.com/api/v1/send/list",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "bfbec71c2f9384260f88f712f8957fc9",
+    "Host": "pushcrew.com",
+    "accept-encoding": "gzip, deflate",
+    "content-length": "168",
+    "Connection": "keep-alive",
+  },
+  "data": {
+    "title": "Test Title",
+    "message": "Test Message",
+    "url": "https://www.google.com",
+    "subscriber_list": "{ \"subscriber_list\":[\"09217e6901554e118212f1a7e572cac8\"]}"
+  }
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+});
+</script>
+</head>
+<body>
 
-   <p> To meet us more often, please subscribe the blog </p>
-   <p> Works? </p>
+<button>Send an HTTP POST request to a page and get the result back</button>
 
-
- </body>
+</body>
 </html>
