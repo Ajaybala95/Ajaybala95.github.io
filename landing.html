@@ -17,8 +17,7 @@ xhr.addEventListener("readystatechange", function () {
 
 xhr.open("POST", "https://pushcrew.com/api/v1/send/list");
 xhr.withCredentials = false;
- xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("Authorization", "bfbec71c2f9384260f88f712f8957fc9");
 xhr.setRequestHeader("Accept", "*/*");
