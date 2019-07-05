@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title>Ajay's HTTPS Blog</title>
-  
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://pushcrew.com/api/v1/send/list",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "cf942c6f3c48cc0ab9478bcab54c0fb6",
+    "User-Agent": "PostmanRuntime/7.15.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "979bb81c-f61a-462a-bf59-ad4722bb5222,2086f6b2-4528-43b5-b874-a6dcfc33a888",
+    "Host": "pushcrew.com",
+    "cookie": "pushcrew_main=hm97htschj3q42hkt97t6s4s41",
+    "accept-encoding": "gzip, deflate",
+    "content-length": "195",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "title": "Test Notification for Deutschland",
+    "message": "Test Message",
+    "url": "https://www.google.com",
+    "subscriber_list": "{ \"subscriber_list\":[\"c0a7fea484084bb0ba5ba26a0d1cf9ad\"]}"
+  }
+}
 
-  </head>
- <body>
-  
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK77KFX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
- <!-- End Google Tag Manager (noscript) -->
-   <h1>Welcome </h1>
-   <p>This is my personal blog. I will be updating the blog regularly so make sure that you subscribe.</p>
-   <p> In my first blog, I will be introducing you to my pet cat. He is Ceasar. Can you guess what breed it is? <br> Here is
-   his pic</p>
-    
-  <p><a class="Link" href="https://ajaybala95.github.io/landing">Redirect</a></p>
-   
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+});
+</script>
+</head>
+<body>
 
+<button>Send an HTTP POST request to a page and get the result back</button>
 
-   <p> To meet us more often, please subscribe the blog </p>
-   <p> Works? </p>
-
-
- </body>
+</body>
 </html>
