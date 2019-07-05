@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://pushcrew.com/api/v1/send/list",
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Authorization": "bfbec71c2f9384260f88f712f8957fc9",
-    "User-Agent": "PostmanRuntime/7.15.0",
-    "Accept": "*/*",
-    "Cache-Control": "no-cache",
-    "Postman-Token": "4a9066f9-92c8-4798-88bf-712d7f9b8a47,8c2a7459-5332-4bf6-a936-d7d4aa9c6c89",
-    "Host": "pushcrew.com",
-    "cookie": "pushcrew_main=hm97htschj3q42hkt97t6s4s41",
-    "accept-encoding": "gzip, deflate",
-    "content-length": "168",
-    "Connection": "keep-alive",
-    "cache-control": "no-cache"
-  },
-  "data": {
-    "title": "Test Title",
-    "message": "Test Message",
-    "url": "https://www.google.com",
-    "subscriber_list": "{ \"subscriber_list\":[\"09217e6901554e118212f1a7e572cac8\"]}"
-  }
-}
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
+<script>
+function RestApiCall() {
+ var data = "title=Test%20Title&message=Test%20Message&url=https%3A%2F%2Fwww.google.com&subscriber_list=%7B%20%22subscriber_list%22%3A%5B%2209217e6901554e118212f1a7e572cac8%22%5D%7D";
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
 });
-});
+
+xhr.open("POST", "https://pushcrew.com/api/v1/send/list");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Authorization", "bfbec71c2f9384260f88f712f8957fc9");
+xhr.setRequestHeader("User-Agent", "PostmanRuntime/7.15.0");
+xhr.setRequestHeader("Accept", "*/*");
+xhr.setRequestHeader("Cache-Control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "4a9066f9-92c8-4798-88bf-712d7f9b8a47,d008e43d-53fe-4445-be34-1ec3bca85bf4");
+xhr.setRequestHeader("Host", "pushcrew.com");
+xhr.setRequestHeader("cookie", "pushcrew_main=hm97htschj3q42hkt97t6s4s41");
+xhr.setRequestHeader("accept-encoding", "gzip, deflate");
+xhr.setRequestHeader("content-length", "168");
+xhr.setRequestHeader("Connection", "keep-alive");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+}
 </script>
 </head>
 <body>
 
-<button>Send an HTTP POST request to a page and get the result back</button>
+<div id="demo">
+<button type="button" onclick="RestApiCall()">Change Content</button>
+</div>
 
 </body>
 </html>
