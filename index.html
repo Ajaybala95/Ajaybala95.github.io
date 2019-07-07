@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
-$(document).ready(function(){
+function RestApi(){
 var data = "title=Test%20Notification%20for%20Deutschland&message=Test%20Message&url=https%3A%2F%2Fwww.google.com&subscriber_list=%7B%20%22subscriber_list%22%3A%5B%2209217e6901554e118212f1a7e572cac8%22%5D%7D";
 
 var xhr = new XMLHttpRequest();
@@ -34,7 +34,7 @@ xhr.send(data);
 </head>
 <body>
 
-<button>Send an HTTP POST request to a page and get the result back</button>
+<button type="button" onclick="RestApi()">Change Content</button>
 
 </body>
 </html>
