@@ -4,37 +4,32 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://pushcrew.com/api/v1/send/list",
-  "method": "POST",
-  "headers": {
-    "Content-Type": "content-type:application/json;charset=UTF-8",
-    "Authorization": "bfbec71c2f9384260f88f712f8957fc9",
-    "User-Agent": "PostmanRuntime/7.15.0",
-    "Accept": "*/*",
-    "Cache-Control": "no-cache",
-    "Postman-Token": "979bb81c-f61a-462a-bf59-ad4722bb5222,2086f6b2-4528-43b5-b874-a6dcfc33a888",
-    "Host": "pushcrew.com",
-    "cookie": "pushcrew_main=hm97htschj3q42hkt97t6s4s41",
-    "accept-encoding": "gzip, deflate",
-    "content-length": "195",
-    "Connection": "keep-alive",
-    "cache-control": "no-cache"
-  },
-  "data": {
-    "title": "Test Notification for Deutschland",
-    "message": "Test Message",
-    "url": "https://www.google.com",
-    "subscriber_list": "{ \"subscriber_list\":[\"09217e6901554e118212f1a7e572cac8\"]}"
-  }
-}
+var data = "title=Test%20Notification%20for%20Deutschland&message=Test%20Message&url=https%3A%2F%2Fwww.google.com&subscriber_list=%7B%20%22subscriber_list%22%3A%5B%2209217e6901554e118212f1a7e572cac8%22%5D%7D";
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
 });
-});
+
+xhr.open("POST", "https://pushcrew.com/api/v1/send/list");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Authorization", "bfbec71c2f9384260f88f712f8957fc9");
+xhr.setRequestHeader("User-Agent", "PostmanRuntime/7.15.0");
+xhr.setRequestHeader("Accept", "*/*");
+xhr.setRequestHeader("Cache-Control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "3a07d22e-3033-49bb-b5c7-fdff52ddec79,f06c8101-aca5-4757-97b8-c0d277da9fd9");
+xhr.setRequestHeader("Host", "pushcrew.com");
+xhr.setRequestHeader("cookie", "pushcrew_main=hm97htschj3q42hkt97t6s4s41");
+xhr.setRequestHeader("accept-encoding", "gzip, deflate");
+xhr.setRequestHeader("content-length", "195");
+xhr.setRequestHeader("Connection", "keep-alive");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
 </script>
 </head>
 <body>
