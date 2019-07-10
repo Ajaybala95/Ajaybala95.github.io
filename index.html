@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
+ <head>
+   <title>Ajay's HTTPS Blog</title>
+  
 
-<script>
-function RestApi(){
-var data = "title=Test%20Notification%20for%20Deutschland&message=Test%20Message&url=https%3A%2F%2Fwww.google.com&subscriber_list=%7B%20%22subscriber_list%22%3A%5B%2209217e6901554e118212f1a7e572cac8%22%5D%7D";
+  </head>
+ <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK77KFX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <!-- End Google Tag Manager (noscript) -->
+   <h1>Welcome </h1>
+   <p>This is my personal blog. I will be updating the blog regularly so make sure that you subscribe.</p>
+   <p> In my first blog, I will be introducing you to my pet cat. He is Ceasar. Can you guess what breed it is? <br> Here is
+   his pic</p>
+    
+  <p><a class="Link" href="https://ajaybala95.github.io/landing">Redirect</a></p>
+   
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
 
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
+   <p> To meet us more often, please subscribe the blog </p>
+   <p> Works? </p>
 
-xhr.open("POST", "https://pushcrew.com/api/v1/send/list");
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("Authorization", "bfbec71c2f9384260f88f712f8957fc9");
 
-xhr.setRequestHeader("Accept", "*/*");
-xhr.setRequestHeader("Cache-Control", "no-cache");
-xhr.setRequestHeader("Postman-Token", "3a07d22e-3033-49bb-b5c7-fdff52ddec79,f06c8101-aca5-4757-97b8-c0d277da9fd9");
-
-xhr.setRequestHeader("cache-control", "no-cache");
-
-xhr.send(data);
-}
-</script>
-</head>
-<body>
-
-<button type="button" onclick="RestApi()">Send Notification</button>
-
-</body>
-</html>
+ </body>
