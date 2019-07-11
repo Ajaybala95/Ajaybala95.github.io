@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<script>
-function RestApiCall() {
- var data = "title=Test%20Title&message=Test%20Message&url=https%3A%2F%2Fwww.google.com&subscriber_list=%7B%20%22subscriber_list%22%3A%5B%2209217e6901554e118212f1a7e572cac8%22%5D%7D";
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://pushcrew.com/api/v1/send/list");
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("Authorization", "bfbec71c2f9384260f88f712f8957fc9");
-xhr.setRequestHeader("User-Agent", "PostmanRuntime/7.15.0");
-xhr.setRequestHeader("Accept", "*/*");
-xhr.setRequestHeader("Cache-Control", "no-cache");
-xhr.setRequestHeader("Postman-Token", "4a9066f9-92c8-4798-88bf-712d7f9b8a47,6eaea832-ac41-4978-a12d-14ae1d8019f0");
-xhr.setRequestHeader("Host", "pushcrew.com");
-xhr.setRequestHeader("cookie", "pushcrew_main=hm97htschj3q42hkt97t6s4s41");
-xhr.setRequestHeader("accept-encoding", "gzip, deflate");
-xhr.setRequestHeader("content-length", "168");
-xhr.setRequestHeader("Connection", "keep-alive");
-xhr.setRequestHeader("cache-control", "no-cache");
-
-xhr.send(data);
-}
-</script>
+<script type="text/javascript">
+    (function(p,u,s,h){
+        p._pcq=p._pcq||[];
+        p._pcq.push(['_currentTime',Date.now()]);
+        s=u.createElement('script');
+        s.type='text/javascript';
+        s.async=true;
+        s.src='https://cdn.pushcrew.com/js/bdd2f03ef86152c136a18a5d1920e533.js';
+        h=u.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s,h);
+    })(window,document);
+  </script>
 </head>
 <body>
 
