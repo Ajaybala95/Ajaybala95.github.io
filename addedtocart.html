@@ -18,20 +18,23 @@
         h.parentNode.insertBefore(s,h);
     })(window,document);
   </script>
- 
+	  <script>
+	  function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+	  </script>
     
    </head>
   <body>
     <h1>Welcome </h1>
     <p>You have become part of the Cart abandonment and will receive a series of notifications</p>
    
-   <b>
-<button id="btn" onclick="this.innerHTML=++this.value" value=0 >3</button>
-</b>
-	  
-	   <b>
-<button id="btn" onclick="this.innerHTML=++this.value" value=0 >0</button>
-</b>
+ <input type="text" id="number" value="0"/>
+   <input type="button" onclick="incrementValue()" value="Increment Value" />
 	
    
 
