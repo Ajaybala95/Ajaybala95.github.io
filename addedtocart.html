@@ -18,14 +18,26 @@
         h.parentNode.insertBefore(s,h);
     })(window,document);
   </script>
-  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        //var counter = $('#TextBox').val();
+        $('#AddButton').click( function() {
+            var counter = $('#TextBox').val();
+            counter++ ;
+            $('#TextBox').val(counter);
+    });
+});
+
+</script>
     
    </head>
   <body>
     <h1>Welcome </h1>
     <p>You have become part of the Cart abandonment and will receive a series of notifications</p>
    
-    
+    <input type="text" name="TextBox" id="TextBox" value="0" />
+<input type="Button" id='AddButton' value="+" />
     
    
 	
